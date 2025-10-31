@@ -1,7 +1,7 @@
 ARG ENDPOINT=/admin
 ARG PORT=80
 
-FROM node:20-alpine AS build
+FROM node:22-alpine AS build
 ARG ENDPOINT
 ENV ENDPOINT=$ENDPOINT
 
@@ -11,7 +11,7 @@ COPY package.json ./
 COPY package-lock.json ./
 
 # Install all dependencies
-RUN npm install
+RUN yarn install
 
 # Copy all required build files
 COPY .eslintignore ./
@@ -30,7 +30,7 @@ COPY static/ ./static/
 COPY src/ ./src/
 
 # Build static application, endpoint is provided by $ENDPOINT
-RUN npm run build 
+RUN yarn run build
 
 FROM caddy:latest
 

@@ -1,0 +1,22 @@
+{
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"postStartCommand": "yarn install",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.formatOnPaste": false,
+				"editor.formatOnSave": true,
+				"editor.formatOnType": true,
+				"files.trimTrailingWhitespace": true
+			},
+			"extensions": [
+				"1YiB.svelte-bundle"
+			]
+		}
+	}
+}

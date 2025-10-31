@@ -8,7 +8,7 @@ ENV ENDPOINT=$ENDPOINT
 # Set up app directory
 WORKDIR /app
 COPY package.json ./
-COPY package-lock.json ./
+COPY yarn.lock ./
 
 # Install all dependencies
 RUN yarn install
